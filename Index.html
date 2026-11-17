@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Prashanthi Ma’am ✨ | November 18, 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-midnight: #080812;
+            --bg-navy: #10152B;
+            --purple-royal: #352052;
+            --rose-gold: #D9A6A0;
+            --champagne: #E8D2A6;
+            --ivory: #F5EFF2;
+            --glass-bg: rgba(16, 21, 43, 0.65);
+            --glass-border: rgba(217, 166, 160, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--bg-midnight);
+            color: var(--ivory);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Ambient Background Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            display: none;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            padding: 40px 20px;
+        }
+
+        .section.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 45px 35px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(232, 210, 166, 0.15);
+            width: 100%;
+            max-width: 750px;
+            margin: 20px 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--champagne);
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.8rem; margin-bottom: 20px; letter-spacing: 0.02em; }
+        h2 { font-size: 2.2rem; margin-bottom: 15px; }
+        p { font-size: 1.1rem; line-height: 1.7; color: var(--ivory); margin-bottom: 25px; font-weight: 300; }
+
+        /* Cinematic Button */
+        .animated-btn {
+            background: linear-gradient(135deg, var(--rose-gold), var(--champagne));
+            color: var(--bg-midnight);
+            border: none;
+            padding: 16px 36px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(217, 166, 160, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'DM Sans', sans-serif;
+            margin-top: 15px;
+        }
+
+        .animated-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 15px 40px rgba(232, 210, 166, 0.5);
+        }
+
+        .animated-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        /* STAGE 1: OPENING */
+        .intro-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--rose-gold);
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: quoteReveal 1.5s ease forwards;
+        }
+        .intro-quote:nth-child(2) { animation-delay: 1.2s; }
+
+        @keyframes quoteReveal {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* STAGE 2: CAKE CUTTING */
+        .cake-container {
+            position: relative;
+            width: 280px;
+            height: 260px;
+            margin: 30px auto;
+            cursor: ew-resize;
+        }
+        .cake-tier {
+            position: absolute;
+            background: linear-gradient(135deg, #352052, #10152B);
+            border: 2px solid var(--rose-gold);
+            border-radius: 12px;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cake-bottom { width: 260px; height: 110px; bottom: 0; left: 10px; }
+        .cake-middle { width: 200px; height: 80px; bottom: 110px; left: 40px; }
+        .cake-top { width: 140px; height: 60px; bottom: 190px; left: 70px; }
+        
+        .candle {
+            position: absolute;
+            width: 10px;
+            height: 35px;
+            background: var(--champagne);
+            bottom: 250px;
+            border-radius: 4px;
+        }
+        .candle::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -4px;
+            width: 18px;
+            height: 22px;
+            background: radial-gradient(circle, #fff 20%, #ffaa33 70%, transparent 80%);
+            border-radius: 50%;
+            animation: flicker 0.6s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { transform: scale(1); opacity: 0.9; }
+            100% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 8px #ffaa33); }
+        }
+        .c1 { left: 115px; }
+        .c2 { left: 135px; }
+        .c3 { left: 155px; }
+
+        .knife {
+            position: absolute;
+            width: 120px;
+            height: 14px;
+            background: linear-gradient(90deg, #ccc, #fff);
+            border-radius: 4px;
+            top: 50%;
+            left: -140px;
+            pointer-events: none;
+            transition: transform 0.1s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        .cut .cake-bottom, .cut .cake-middle, .cut .cake-top {
+            transform: translateX(18px) rotate(2deg);
+            filter: drop-shadow(5px 5px 15px rgba(217, 166, 160, 0.4));
+        }
+
+        /* STAGE 3: BALLOONS */
+        .balloon-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .balloon {
+            width: 90px;
+            height: 115px;
+            background: radial-gradient(circle at 30% 30%, var(--rose-gold), var(--purple-royal));
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            box-shadow: inset -8px -10px 20px rgba(0,0,0,0.4), 0 10px 20px rgba(0,0,0,0.3);
+            transform: scale(0.6);
+        }
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 42px;
+            width: 2px;
+            height: 40px;
+            background: var(--champagne);
+        }
+        .balloon.inflated { transform: scale(1); }
+        .balloon.popped { transform: scale(0); opacity: 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+
+        /* STAGE 4: CANDLE BLOWING */
+        .candle-stand {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+            margin: 40px 0;
+        }
+        .big-candle {
+            width: 24px;
+            height: 110px;
+            background: linear-gradient(135deg, var(--rose-gold), var(--champagne));
+            border-radius: 6px;
+            position: relative;
+        }
+        .big-flame {
+            position: absolute;
+            top: -35px;
+            left: -8px;
+            width: 40px;
+            height: 55px;
+            background: radial-gradient(circle, #fff 15%, #ffb703 60%, #fb8500 90%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flicker 0.6s infinite alternate;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .extinguished .big-flame { transform: scale(0); opacity: 0; }
+        .smoke {
+            position: absolute;
+            top: -40px;
+            left: 4px;
+            width: 6px;
+            height: 30px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            filter: blur(4px);
+            opacity: 0;
+        }
+        .extinguished .smoke { animation: smokeRise 1.5s ease forwards; }
+        @keyframes smokeRise {
+            0% { opacity: 0.8; transform: translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateY(-50px) scale(2.5); }
+        }
+
+        /* STAGE 5: ENVELOPE LETTER */
+        .envelope-wrapper {
+            width: 300px;
+            height: 200px;
+            background: var(--purple-royal);
+            border-radius: 12px;
+            margin: 40px auto;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 1px solid var(--rose-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
+        .envelope-wrapper:hover { transform: scale(1.03); }
+        .wax-seal {
+            width: 50px;
+            height: 50px;
+            background: #b7094c;
+            border-radius: 50%;
+            border: 2px solid var(--champagne);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--champagne);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        .letter-content {
+            display: none;
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--ivory);
+            white-space: pre-line;
+        }
+
+        /* STAGE 6: QUIZ */
+        .quiz-option {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            padding: 14px 20px;
+            border-radius: 12px;
+            margin: 10px 0;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+        .quiz-option:hover { background: rgba(217, 166, 160, 0.15); border-color: var(--rose-gold); }
+        .quiz-option.selected { background: var(--purple-royal); border-color: var(--champagne); }
+
+        /* STAGE 7: MEMORIES */
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+            width: 100%;
+        }
+        .memory-card {
+            background: rgba(16, 21, 43, 0.8);
+            border: 1px solid var(--glass-border);
+            border-radius: 18px;
+            padding: 25px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .memory-card:hover { transform: translateY(-5px); border-color: var(--rose-gold); }
+        .memory-card h3 { color: var(--rose-gold); margin-bottom: 10px; font-size: 1.3rem; }
+
+        /* STAGE 8: GIFT BOX */
+        .gift-box {
+            width: 160px;
+            height: 160px;
+            background: linear-gradient(135deg, var(--purple-royal), var(--bg-navy));
+            border: 2px solid var(--champagne);
+            border-radius: 16px;
+            margin: 40px auto;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s ease;
+        }
+        .gift-box::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 25px;
+            background: var(--champagne);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .gift-box::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 100%;
+            background: var(--champagne);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .gift-box.opened { transform: scale(1.1) rotate(5deg); opacity: 0.8; pointer-events: none; }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--champagne);
+            position: absolute;
+            animation: confettiFall 3s linear forwards;
+            z-index: 999;
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container">
+
+        <!-- STAGE 1: OPENING -->
+        <div id="stage-1" class="section active">
+            <div class="glass-card">
+                <p class="intro-quote">"Some people make ordinary days feel special."</p>
+                <p class="intro-quote">"And some people leave us with lessons that stay long after the class is over."</p>
+                <br>
+                <button class="animated-btn" onclick="nextStage(2)">Open Your Surprise ✨</button>
+            </div>
+        </div>
+
+        <!-- STAGE 2: CAKE CUTTING -->
+        <div id="stage-2" class="section">
+            <div class="glass-card">
+                <h2>Let's cut the cake, Ma’am! 🎂</h2>
+                <p>Drag the silver knife across the cake or tap the button below to slice it.</p>
+                <div class="cake-container" id="cake-box" onmousemove="dragKnife(event)" ontouchmove="dragKnifeTouch(event)">
+                    <div class="candle c1"></div>
+                    <div class="candle c2"></div>
+                    <div class="candle c3"></div>
+                    <div class="cake-tier cake-top"></div>
+                    <div class="cake-tier cake-middle"></div>
+                    <div class="cake-tier cake-bottom"></div>
+                    <div class="knife" id="knife-el"></div>
+                </div>
+                <button class="animated-btn" id="cake-btn" onclick="cutCake()" style="margin-top: 20px;">Tap to Cut Cake 🔪</button>
+                <br><br>
+                <button class="animated-btn" id="btn-next-2" disabled onclick="nextStage(3)">Continue ➔</button>
+            </div>
+        </div>
+
+        <!-- STAGE 3: BALLOON CELEBRATION -->
+        <div id="stage-3" class="section">
+            <div class="glass-card">
+                <h2>A few balloons for you! 🎈</h2>
+                <p>Tap each balloon once to inflate it, and tap a second time to pop it with confetti!</p>
+                <div class="balloon-grid">
+                    <div class="balloon" id="b1" onclick="handleBalloon(1)"></div>
+                    <div class="balloon" id="b2" onclick="handleBalloon(2)"></div>
+                    <div class="balloon" id="b3" onclick="handleBalloon(3)"></div>
+                </div>
+                <p id="balloon-status" style="color: var(--rose-gold); font-weight: 500;">Balloons popped: 0 / 3</p>
+                <button class="animated-btn" id="btn-next-3" disabled onclick="nextStage(4)">Continue ➔</button>
+            </div>
+        </div>
+
+        <!-- STAGE 4: CANDLE BLOWING -->
+        <div id="stage-4" class="section">
+            <div class="glass-card">
+                <h2>Make a wish ✨</h2>
+                <p>Blow into your device microphone or click the manual button to extinguish the candles!</p>
+                <div class="candle-stand">
+                    <div class="big-candle" id="bc1"><div class="big-flame"></div><div class="smoke"></div></div>
+                    <div class="big-candle" id="bc2"><div class="big-flame"></div><div class="smoke"></div></div>
+                    <div class="big-candle" id="bc3"><div class="big-flame"></div><div class="smoke"></div></div>
+                </div>
+                <button class="animated-btn" onclick="extinguishCandles()">Blow Candles Manually 🌬️</button>
+                <br><br>
+                <button class="animated-btn" id="btn-next-4" disabled onclick="nextStage(5)">Continue ➔</button>
+            </div>
+        </div>
+
+        <!-- STAGE 5: PERSONAL BIRTHDAY LETTER -->
+        <div id="stage-5" class="section">
+            <div class="glass-card">
+                <h2>A message from me</h2>
+                <div class="envelope-wrapper" id="envelope" onclick="openLetter()">
+                    <div class="wax-seal">P</div>
+                </div>
+                <div class="letter-content" id="letter-text">
+Dear Prashanthi Ma’am,
+
+First of all, a very, very Happy Birthday to you! ❤️🎂
+
+Ma’am, there are actually so many things I would like to say, and sometimes I may not express them properly, but I genuinely want you to know how much I appreciate you.
+
+Thank you for being more than just a Physics teacher to me. From helping me with my doubts to encouraging me in science projects and listening to my ideas, every little bit of guidance has meant a lot to me.
+
+One thing I will always remember is how you taught me the importance of patience and staying calm. Some of your words have made me think about the way I react to situations. I am still learning, but I genuinely try to remember those lessons.
+
+I also really appreciate the way you encourage my interest in science, technology and trying out new things. Your suggestions, support and the opportunities you have given me have helped me learn beyond what is written in a textbook.
+
+And Ma’am, I know I may sometimes be impatient, make mistakes or not express myself properly. If I have ever been rude or unintentionally disappointed you, I am genuinely sorry. I am learning, and I hope to become better.
+
+I may not say thank you every time, but I truly value all the little moments, conversations, guidance and encouragement.
+
+On your special day, I wish you endless happiness, good health, peace and success. May you always have reasons to smile, and may the coming year be filled with wonderful memories.
+
+I hope this little birthday surprise makes your day even more special!
+
+Once again, Happy Birthday, Prashanthi Ma’am! ❤️
+
+With lots of respect, gratitude and best wishes.
+                </div>
+                <br>
+                <button class="animated-btn" id="btn-next-5" style="display:none;" onclick="nextStage(6)">Continue to Quiz ➔</button>
+            </div>
+        </div>
+
+        <!-- STAGE 6: CLASSROOM CHRONICLES QUIZ -->
+        <div id="stage-6" class="section">
+            <div class="glass-card">
+                <h2>Classroom Chronicles & Real-Life Moments 🌟</h2>
+                <p id="quiz-question-counter">Question 1 of 7</p>
+                <h3 id="quiz-question-title" style="margin-bottom: 20px; font-size: 1.3rem; color: var(--ivory);"></h3>
+                <div id="quiz-op
